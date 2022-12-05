@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\DAO;
 
-use App\Http\Controllers\APIC;
+use App\Http\Controllers\DAO\APIC;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Exception;
