@@ -3,6 +3,7 @@
 @section('content')
     <body>
         <h1>Vista de livros papito</h1>
+        <a href="/godView/books/create">Crear <x-zondicon-add-solid /></a>
 
         <table>
             <head>
@@ -12,15 +13,18 @@
                     <th>genero</th>
                     <th></th>
                     <th></th>
+                    <th></th>
                 </tr>
             </head>
             @foreach ($data as $libro)
                 <tr>
-                    <th>{{$user->name}}</th>
-                    <th>{{$user->email}}</th>
+                    <th>{{$libro->nombre}}</th>
+                    <th>{{$libro->descripcion}}</th>
+                    <th>{{$libro->genero}}</th>
                     <th></th>
-                    <th><button>editar</button></th>
-                    <th><button>borrar</button></th>
+                    <th><a href='/godView/books/edit/{{intval($libro->id)}}'>eee<x-iconpark-edit /></a></th>
+                    <th><a href='/godView/books/delete/{{intval($libro->id)}}'>eee<x-iconpark-delete /></a></th>
+                    <th><a>eee<x-bi-cloud-arrow-up-fill /></a></th>
                 </tr>
             @endforeach
         </table>

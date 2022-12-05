@@ -1,3 +1,60 @@
+:root{
+    --primary : #814754;
+    --secundary : #478174;
+    --white1 : #f9f9f9;
+    --white2 : #ecefd1;
+    --black1 : #373737;
+    --ground : #b6a991;
+}
+
 html{
     font-family: Arial;
+    background-color: var(--ground);
+    height: 100%;
 }
+
+body{
+    height: 100%;
+    margin: 0 auto;
+}
+
+footer{
+    background-color: var(--secundary);
+    color: var(--white1);
+    height: 20%;
+}
+
+/* --------------- BOTONES --------------- */
+
+button{
+    font-size: 2rem;
+    width: 4rem;
+    padding: 1rem;
+    border-radius: 25%;
+}
+
+/* --------------- COSAS RANDOM XD --------------- */
+
+.centered-width{
+    width: fit-content;
+    height: 80%;
+    margin: 0 auto;
+}
+
+.text-middle{
+    text-align: center;
+}
+
+.login {
+    vertical-align: middle;
+}
+
+.search-bar{
+    color: var(--black1);
+    font-size: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 14rem;
+    padding-right: 14rem;
+}
+

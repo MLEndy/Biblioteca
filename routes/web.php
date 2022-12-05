@@ -23,12 +23,25 @@ Route::post('/login', [UserController::class, 'LoginUser'])->middleware('guest')
 Route::post('/register', [UserController::class, 'RegisterUser'])->middleware('guest');
 Route::post('/logout', [UserController::class, 'LogoutUser'])->middleware('auth');
 
+
+
 /*------------------------- CONTROL LIBROS -------------------------------*/
 Route::get('/search', [LibrosController::class, 'SearchIndex'])->middleware('auth');
 
 /*------------------------- CONTROL ADMIN -------------------------------*/
-Route::get('/test', [AdminController::class, 'TestProfile']);
-Route::post('/saveTest', [AdminController::class, 'TestStorage']);
 Route::get('/getToken', [AdminController::class, 'getToken']);
 Route::get('/godView/users', [AdminController::class, 'AdminUsers']);
+
 Route::get('/godView/books', [AdminController::class, 'AdminBooks']);
+Route::get('/godView/books/create', [AdminController::class, 'AdminCreateIndex']);
+Route::get('/godView/books/edit/{id}', [AdminController::class, 'AdminEditIndex']);
+Route::get('/godView/users/create', [AdminController::class, 'AdminCreateUserIndex']);
+Route::get('/godView/users/edit/{id}', [AdminController::class, 'AdminEditUserIndex']);
+
+Route::post('/godView/books/create', [AdminController::class, 'AdminCreateBook']);
+Route::post('/godView/books/update', [AdminController::class, 'AdminEditBook']);
+Route::post('/godView/users/create', [AdminController::class, 'AdminCreateUser']);
+Route::post('/godView/users/update', [AdminController::class, 'AdminEditUser']);
+
+Route::get('/godView/books/delete/{id}', [AdminController::class, 'AdminDeleteBook']);
+Route::get('/godView/users/delete/{id}', [AdminController::class, 'AdminDeleteUser']);

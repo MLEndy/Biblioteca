@@ -3,6 +3,7 @@
 @section('content')
     <body>
         <h1>Vista de admins papito</h1>
+        <a href="/godView/users/create">Crear</a>
 
         <table>
             <head>
@@ -17,9 +18,17 @@
                 <tr>
                     <th>{{$user->name}}</th>
                     <th>{{$user->email}}</th>
-                    <th></th>
-                    <th><button>editar</button></th>
-                    <th><button>borrar</button></th>
+                    <th>@if (Auth::User()->id == $user->id)
+                        Activo
+                    @else
+                        @if ($user->hasRole('admin'))
+                            Admin
+                        @else
+                            Usuario
+                        @endif
+                    @endif</th>
+                    <th><a href="/godView/users/edit/{{intval($user->id)}}">editar</a></th>
+                    <th><a href='/godView/users/delete/{{intval($user->id)}}'>borrar</a></th>
                 </tr>
             @endforeach
         </table>

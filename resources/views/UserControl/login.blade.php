@@ -2,7 +2,7 @@
 
 @section('content')
 <body>
-    <div class="login-box">
+    <div class="centered-width login">
         <h1 class="title-shadowed color-white">Iniciar Sesion</h1>
         <form method="POST" action="/login">
             @csrf
