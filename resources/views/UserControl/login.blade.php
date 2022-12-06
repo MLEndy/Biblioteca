@@ -9,10 +9,10 @@
             <p >Ingrese su correo</p>
             <input type="text" name="email">
             <p>Ingrese su contrasena</p>
-            <input type="password" name="password"><br>
-            <button type="submit">Iniciar Sesion</button>
-            <p>¿Aún no tienes una cuenta? <a href="/register">Registrate</a></p>
+            <input type="password" name="password"><br><br>
+            <button class="button pine" type="submit">Iniciar Sesion</button>
         </form>
+        <p>¿Aún no tienes una cuenta? <a class="a" href="/register">Registrate</a></p>
     </div>
 </body>
 @endsection

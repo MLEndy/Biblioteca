@@ -28,6 +28,10 @@ Route::post('/logout', [UserController::class, 'LogoutUser'])->middleware('auth'
 /*------------------------- CONTROL LIBROS -------------------------------*/
 Route::get('/search', [LibrosController::class, 'SearchIndex'])->middleware('auth');
 
+Route::post('/api/save', [LibrosController::class, 'ApiSaveBook']); //Guarda libro
+Route::post('/api/search', [LibrosController::class, 'ApiSearchBook']);//Busca libro
+ROute::post('/api/get', [LibrosController::class, 'ApiGetBook']);//Obtiene un libro
+
 /*------------------------- CONTROL ADMIN -------------------------------*/
 Route::get('/getToken', [AdminController::class, 'getToken']);
 Route::get('/godView/users', [AdminController::class, 'AdminUsers']);

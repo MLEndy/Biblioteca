@@ -9,29 +9,26 @@
 </head>
 
 @if ($hasHeader)
-<header>
-    <div>
-        <a>Me </a>
-        <a>quiero </a>
-        <a>morir </a>  
-        @auth
-        <form method="POST" action="/logout">@csrf<button type="submit">Salir</button></form>
-        @endauth
-        @can('adminPermission')
-            <a href="/godView/users">Usuarios</a>
-            <a href="/godView/books">Libros</a>
-        @endcan
-    </div>    
+<header class="header">
+    <a {{$pageName == 'Buscador' ? 'class=active' : ''}} href="/search">Buscar</a>
+    @can('adminPermission')
+        <a {{$pageName == 'Usuarios' ? 'class=active' : ''}} href="/godView/users">Usuarios</a>
+        <a {{$pageName == 'Libros' ? 'class=active' : ''}} href="/godView/books">Libros</a>
+    @endcan
+
+    @auth
+    <div class="logout">
+    <ul>
+        <form method="POST" action="/logout">@csrf<button class="button black" type="submit">Salir</button></form>
+    </ul>
+    </div>
+    @endauth
 </header>    
 @endif
 
 @yield('content')
 
 <footer>
-    <p>
-        Mira krnal, esta bien que quieras que haga ya todo un desmadre aca bien insano, pero tampoco te mames alchile, mira, ni
-        tu ni yo sabemos como va el footer asi que para que le hacemos a la mamada, mejor sigue trabajando en otra cosa si?,
-        sale te me cuidas
-    </p>
+    Footer
 </footer>
 </html>

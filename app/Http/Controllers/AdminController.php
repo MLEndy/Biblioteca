@@ -21,7 +21,7 @@ class AdminController extends Controller
         $view = new AppController;
         $service = new UserService;
 
-        return $view->AppViewWithData('AdminView.principal', 'DiositoView', true, $service->AppServiceGetAllUsers());
+        return $view->AppViewWithData('AdminView.principal', 'Usuarios', true, $service->AppServiceGetAllUsers());
     }
     
     public function AdminCreateUserIndex(){
@@ -65,7 +65,7 @@ class AdminController extends Controller
         $view = new AppController;
         $service = new BookService;
 
-        return $view->AppViewWithData('AdminView.libros', 'DiositoView', true, $service->AppServiceGetAllBooks());
+        return $view->AppViewWithData('AdminView.libros', 'Libros', true, $service->AppServiceGetAllBooks());
     }
 
     public function AdminCreateIndex(){
