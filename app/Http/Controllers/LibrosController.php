@@ -33,4 +33,17 @@ class LibrosController extends Controller
 
         return $view->AppViewWithData('UserView.result', 'Resultados de Busqueda', true, $book->AppServiceSearchBook($request));
     }
+    
+    public function ApiVisualizeBook(){
+        $view = new AppController;
+        $baseado = file_get_contents(public_path('test/bc.pdf'));
+        $baseado = base64_encode($baseado);
+
+        $baseado2 = base64_decode($baseado);
+        $pdf = fopen('pdf_generated.pdf', 'w');
+        fwrite($pdf, $baseado2);
+        fclose($pdf);
+
+        return $view->AppViewWithData('UserView.viewer', 'Libro', true, '/pdf_generated.pdf');
+    }
 }

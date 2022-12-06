@@ -78,6 +78,11 @@ h1{
     border-bottom: 0.2rem solid var(--black1);
 }
 
+embed{
+    width: 60%;
+    height: 80%;
+}
+
 .a{
     color: var(--primary);
     text-decoration: none;

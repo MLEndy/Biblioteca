@@ -30,10 +30,12 @@ Route::get('/search', [LibrosController::class, 'SearchIndex'])->middleware('aut
 
 Route::post('/api/save', [LibrosController::class, 'ApiSaveBook']); //Guarda libro
 Route::post('/api/search', [LibrosController::class, 'ApiSearchBook']);//Busca libro
-ROute::post('/api/get', [LibrosController::class, 'ApiGetBook']);//Obtiene un libro
+ROute::get('/api/get', [LibrosController::class, 'ApiVisualizeBook']);//Obtiene un libro
 
 /*------------------------- CONTROL ADMIN -------------------------------*/
 Route::get('/getToken', [AdminController::class, 'getToken']);
+Route::get('/base', [AdminController::class, 'test']);
+
 Route::get('/godView/users', [AdminController::class, 'AdminUsers']);
 
 Route::get('/godView/books', [AdminController::class, 'AdminBooks']);
